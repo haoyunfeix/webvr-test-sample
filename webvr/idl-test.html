@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html class="a">
+<head>
+<title>AudioBuffer IDL Test</title>
+<!--<script src="/resources/testharness.js"></script><script src="/resources/testharnessreport.js"></script><script src="/resources/idlharness.js"></script><script src="/resources/WebIDLParser.js"></script><script src="/webaudio/js/lodash.js"></script><script src="/webaudio/js/vendor-prefixes.js"></script><script src="/webaudio/js/helpers.js"></script><style type="text/css"> -->
+<script src="./resources/testharness.js"></script><script src="./resources/testharnessreport.js"></script><script src="./resources/idlharness.js"></script><script src="./resources/WebIDLParser.js"></script><script src="./js/lodash.js"></script><script src="./js/vendor-prefixes.js"></script><script src="./js/helpers.js"></script><style type="text/css">
+    #event-target-idl,
+    #audio-context-idl
+    { visibility:hidden; height: 0px;}
+  </style>
+</head>
+<body class="a">
+
+   <pre id="event-target-idl">interface EventTarget {
+  void addEventListener(DOMString type, EventListener? callback, optional boolean capture = false);
+  void removeEventListener(DOMString type, EventListener? callback, optional boolean capture = false);
+  boolean dispatchEvent(Event event);
+};
+
+/*
+callback interface EventListener {
+  void handleEvent(Event event);
+};
+*/
+// Callback interfaces are not supported yet, but that's ok
+interface EventListener {};
+</pre>
+
+   <pre id="audio-context-idl">callback DecodeSuccessCallback = void (AudioBuffer decodedData);
+callback DecodeErrorCallback = void ();
+
+[Constructor]
+interface AudioContext : EventTarget {
+
+    readonly attribute AudioDestinationNode destination;
+    readonly attribute float sampleRate;
+    readonly attribute double currentTime;
+    readonly attribute AudioListener listener;
+
+    AudioBuffer createBuffer(unsigned long numberOfChannels, unsigned long length, float sampleRate);
+
+    void decodeAudioData(ArrayBuffer audioData,
+                         DecodeSuccessCallback successCallback,
+                         optional DecodeErrorCallback errorCallback);
+
+
+    // AudioNode creation
+    AudioBufferSourceNode createBufferSource();
+
+    MediaElementAudioSourceNode createMediaElementSource(HTMLMediaElement mediaElement);
+
+    MediaStreamAudioSourceNode createMediaStreamSource(MediaStream mediaStream);
+    MediaStreamAudioDestinationNode createMediaStreamDestination();
+
+    ScriptProcessorNode createScriptProcessor(optional unsigned long bufferSize = 0,
+                                              optional unsigned long numberOfInputChannels = 2,
+                                              optional unsigned long numberOfOutputChannels = 2);
+
+    AnalyserNode createAnalyser();
+    GainNode createGain();
+    DelayNode createDelay(optional double maxDelayTime = 1.0);
+    BiquadFilterNode createBiquadFilter();
+    WaveShaperNode createWaveShaper();
+    PannerNode createPanner();
+    ConvolverNode createConvolver();
+
+    ChannelSplitterNode createChannelSplitter(optional unsigned long numberOfOutputs = 6);
+    ChannelMergerNode createChannelMerger(optional unsigned long numberOfInputs = 6);
+
+    DynamicsCompressorNode createDynamicsCompressor();
+
+    OscillatorNode createOscillator();
+    PeriodicWave createPeriodicWave(Float32Array real, Float32Array imag);
+
+};</pre>
+
+   <pre id="audio-buffer-idl">interface VRDisplay : EventTarget {
+  readonly attribute boolean isConnected;
+  readonly attribute boolean isPresenting;
+
+  /**
+   * Dictionary of capabilities describing the VRDisplay.
+   */
+  [Constant] readonly attribute VRDisplayCapabilities capabilities;
+
+  /**
+   * If this VRDisplay supports room-scale experiences, the optional
+   * stage attribute contains details on the room-scale parameters.
+   */
+  readonly attribute VRStageParameters? stageParameters;
+
+  /* Return the current VREyeParameters for the given eye. */
+  VREyeParameters getEyeParameters(VREye whichEye);
+
+  /**
+   * An identifier for this distinct VRDisplay. Used as an
+   * association point in the Gamepad API.
+   */
+  [Constant] readonly attribute unsigned long displayId;
+
+  /**
+   * A display name, a user-readable name identifying it.
+   */
+  [Constant] readonly attribute DOMString displayName;
+
+  /**
+   * Return a VRPose containing the future predicted pose of the VRDisplay
+   * when the current frame will be presented. The value returned will not
+   * change until JavaScript has returned control to the browser.
+   *
+   * The VRPose will contain the position, orientation, velocity,
+   * and acceleration of each of these properties.
+   */
+  [NewObject] VRPose getPose();
+
+  /**
+   * Return the current instantaneous pose of the VRDisplay, with no
+   * prediction applied.
+   */
+  [NewObject] VRPose getImmediatePose();
+
+  /**
+   * Reset the pose for this display, treating its current position and
+   * orientation as the "origin/zero" values. VRPose.position,
+   * VRPose.orientation, and VRStageParameters.sittingToStandingTransform may be
+   * updated when calling resetPose(). This should be called in only
+   * sitting-space experiences.
+   */
+  void resetPose();
+
+  /**
+   * z-depth defining the near plane of the eye view frustum
+   * enables mapping of values in the render target depth
+   * attachment to scene coordinates. Initially set to 0.01.
+   */
+  attribute double depthNear;
+
+  /**
+   * z-depth defining the far plane of the eye view frustum
+   * enables mapping of values in the render target depth
+   * attachment to scene coordinates. Initially set to 10000.0.
+   */
+  attribute double depthFar;
+
+  /**
+   * The callback passed to `requestAnimationFrame` will be called
+   * any time a new frame should be rendered. When the VRDisplay is
+   * presenting the callback will be called at the native refresh
+   * rate of the HMD. When not presenting this function acts
+   * identically to how window.requestAnimationFrame acts. Content should
+   * make no assumptions of frame rate or vsync behavior as the HMD runs
+   * asynchronously from other displays and at differing refresh rates.
+   */
+  [Throws] long requestAnimationFrame(FrameRequestCallback callback);
+
+  /**
+   * Passing the value returned by `requestAnimationFrame` to
+   * `cancelAnimationFrame` will unregister the callback.
+   */
+  [Throws] void cancelAnimationFrame(long handle);
+
+  /**
+   * Begin presenting to the VRDisplay. Must be called in response to a user gesture.
+   * Repeat calls while already presenting will update the VRLayers being displayed.
+   */
+  Promise<void> requestPresent(sequence<VRLayer> layers);
+
+  /**
+   * Stops presenting to the VRDisplay.
+   */
+  Promise<void> exitPresent();
+
+  /**
+   * Get the layers currently being presented.
+   */
+  sequence<VRLayer> getLayers();
+
+  /**
+   * The VRLayer provided to the VRDisplay will be captured and presented
+   * in the HMD. Calling this function has the same effect on the source
+   * canvas as any other operation that uses its source image, and canvases
+   * created without preserveDrawingBuffer set to true will be cleared.
+   */
+  void submitFrame(optional VRPose pose);
+};
+
+typedef (HTMLCanvasElement or
+         OffscreenCanvas) VRSource;
+
+dictionary VRLayer {
+  VRSource? source = null;
+
+  sequence<float>? leftBounds = null;
+  sequence<float>? rightBounds = null;
+};
+
+interface VRDisplayCapabilities {
+  readonly attribute boolean hasPosition;
+  readonly attribute boolean hasOrientation;
+  readonly attribute boolean hasExternalDisplay;
+  readonly attribute boolean canPresent;
+  readonly attribute unsigned long maxLayers;
+};
+
+enum VREye {
+  "left",
+  "right"
+};
+
+interface VRFieldOfView {
+  readonly attribute double upDegrees;
+  readonly attribute double rightDegrees;
+  readonly attribute double downDegrees;
+  readonly attribute double leftDegrees;
+};
+
+interface VRPose {
+  readonly attribute DOMHighResTimeStamp timestamp;
+
+  readonly attribute Float32Array? position;
+  readonly attribute Float32Array? linearVelocity;
+  readonly attribute Float32Array? linearAcceleration;
+
+  readonly attribute Float32Array? orientation;
+  readonly attribute Float32Array? angularVelocity;
+  readonly attribute Float32Array? angularAcceleration;
+};
+
+interface VREyeParameters {
+  [Constant, Cached] readonly attribute Float32Array offset;
+
+  [Constant, Cached] readonly attribute VRFieldOfView fieldOfView;
+
+  [Constant, Cached] readonly attribute unsigned long renderWidth;
+  [Constant, Cached] readonly attribute unsigned long renderHeight;
+};
+
+interface VRStageParameters {
+  readonly attribute Float32Array sittingToStandingTransform;
+
+  readonly attribute float sizeX;
+  readonly attribute float sizeZ;
+};
+
+partial interface Navigator {
+  Promise<sequence<VRDisplay>> getVRDisplays();
+  readonly attribute sequence<VRDisplay> activeVRDisplays;
+};
+
+partial interface Window {
+  attribute EventHandler onvrdisplayconnected;
+  attribute EventHandler onvrdisplaydisconnected;
+  attribute EventHandler onvrdisplaypresentchange;
+};
+
+partial interface Gamepad {
+  [Constant] readonly attribute unsigned long displayId;
+};</pre>
+
+  <div id="log"></div>
+
+  <script>
+(function() {
+  var idl_array = new IdlArray();
+//  idl_array.add_untested_idls(document.getElementById("event-target-idl").textContent);
+//  idl_array.add_untested_idls(document.getElementById("audio-context-idl").textContent);
+  idl_array.add_idls(document.getElementById("audio-buffer-idl").textContent);
+
+  // For these tests the value of the arguments is unimportant.
+  audio_buffer = (new AudioContext).createBuffer(numberOfChannels = 1, length = 256, sampleRate = 44100);
+
+  idl_array.add_objects({AudioBuffer: ["audio_buffer"]});
+  idl_array.test();
+})();
+  </script>
+</body>
+</html>
