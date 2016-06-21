@@ -267,9 +267,9 @@ partial interface Gamepad {
   idl_array.add_idls(document.getElementById("audio-buffer-idl").textContent);
 
   // For these tests the value of the arguments is unimportant.
-  audio_buffer = (new AudioContext).createBuffer(numberOfChannels = 1, length = 256, sampleRate = 44100);
+  audio_buffer = navigator.getVRDisplays();
 
-  idl_array.add_objects({AudioBuffer: ["audio_buffer"]});
+  idl_array.add_objects({VRDisplay: ["audio_buffer"]});
   idl_array.test();
 })();
   </script>
