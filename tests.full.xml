@@ -1,0 +1,516 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet type="text/xsl" href="./testcase.xsl" ?>
+  <test_definition>
+    <suite category="W3C/HTML5 APIs" name="webapi-rawsockets-w3c-tests">
+      <set name="idlharness" type="js">
+        <testcase component="W3C_HTML5 APIs/Experimental/Raw Sockets" execution_type="auto" id="RawSockets_interface_basic" priority="P1" purpose="Test RawSockets interface" status="approved" type="compliance" subcase="3">
+          <description>
+            <test_script_entry>/opt/webapi-rawsockets-w3c-tests/rawsockets/RawSockets_interface_basic.html</test_script_entry>
+          </description>
+          <specs>
+            <spec>
+              <spec_assertion category="W3C API Specifications" element_name="TBD" element_type="TBD" interface="TBD" section="System-level APIs" specification="Raw Sockets" />
+              <spec_url>http://www.w3.org/TR/raw-sockets/</spec_url>
+              <spec_statement/>
+            </spec>
+          </specs>
+        </testcase>
+        <testcase component="W3C_HTML5 APIs/Experimental/Raw Sockets" execution_type="auto" id="TCPServerSocket_interface_basic" priority="P1" purpose="Test TCPServerSocket interface" status="approved" type="compliance" subcase="8">
+          <description>
+            <test_script_entry>/opt/webapi-rawsockets-w3c-tests/rawsockets/TCPServerSocket_interface_basic.html</test_script_entry>
+          </description>
+          <specs>
+            <spec>
+              <spec_assertion category="W3C API Specifications" element_name="TBD" element_type="TBD" interface="TBD" section="System-level APIs" specification="Raw Sockets" />
+              <spec_url>http://www.w3.org/TR/raw-sockets/</spec_url>
+              <spec_statement/>
+            </spec>
+          </specs>
+        </testcase>
+        <testcase component="W3C_HTML5 APIs/Experimental/Raw Sockets" execution_type="auto" id="TCPSocket_interface_basic" priority="P1" purpose="Test TCPSocket interface" status="approved" type="compliance" subcase="17">
+          <description>
+            <test_script_entry>/opt/webapi-rawsockets-w3c-tests/rawsockets/TCPSocket_interface_basic.html</test_script_entry>
+          </description>
+          <specs>
+            <spec>
+              <spec_assertion category="W3C API Specifications" element_name="TBD" element_type="TBD" interface="TBD" section="System-level APIs" specification="Raw Sockets" />
+              <spec_url>http://www.w3.org/TR/raw-sockets/</spec_url>
+              <spec_statement/>
+            </spec>
+          </specs>
+        </testcase>
+        <testcase component="W3C_HTML5 APIs/Experimental/Raw Sockets" execution_type="auto" id="UDPSocket_interface_basic" priority="P1" purpose="Test UDPSocket interface" status="approved" type="compliance" subcase="17">
+          <description>
+            <test_script_entry>/opt/webapi-rawsockets-w3c-tests/rawsockets/UDPSocket_interface_basic.html</test_script_entry>
+          </description>
+          <specs>
+            <spec>
+              <spec_assertion category="W3C API Specifications" element_name="TBD" element_type="TBD" interface="TBD" section="System-level APIs" specification="Raw Sockets" />
+              <spec_url>http://www.w3.org/TR/raw-sockets/</spec_url>
+              <spec_statement/>
+            </spec>
+          </specs>
+        </testcase>
+      </set>
+      <set name="TCPSocket1" type="js">
+        <testcase component="W3C_HTML5 APIs/Experimental/Raw Sockets" execution_type="auto" id="TCPSocket_attribute" priority="P1" purpose="Test TCPSocket attribute" status="approved" type="compliance" subcase="8">
+          <description>
+            <test_script_entry>/opt/webapi-rawsockets-w3c-tests/rawsockets/TCPSocket_attribute.html</test_script_entry>
+          </description>
+          <specs>
+            <spec>
+              <spec_assertion category="W3C API Specifications" element_name="addressReuse" element_type="attribute" interface="TCPSocket" section="System-level APIs" specification="Raw Sockets" />
+              <spec_url>http://www.w3.org/2012/sysapps/raw-sockets/#interface-tcpsocket</spec_url>
+              <spec_statement/>
+            </spec>
+          </specs>
+        </testcase>
+      </set>
+      <set name="TCPSocket2" type="js">
+        <testcase component="W3C_HTML5 APIs/Experimental/Raw Sockets" execution_type="auto" id="TCPSocket_onclose_with_close" priority="P1" purpose="Check if set up the onclose event successful for TCPSocket using the type close" status="approved" type="compliance">
+          <description>
+            <test_script_entry>/opt/webapi-rawsockets-w3c-tests/rawsockets/TCPSocket_event_close.html</test_script_entry>
+          </description>
+          <specs>
+            <spec>
+              <spec_assertion category="W3C API Specifications" element_name="onclose" element_type="event" interface="TCPSocket" section="System-level APIs" specification="Raw Sockets" />
+              <spec_url>http://www.w3.org/2012/sysapps/raw-sockets/#interface-tcpsocket</spec_url>
+              <spec_statement/>
+            </spec>
+          </specs>
+        </testcase>
+        <testcase component="W3C_HTML5 APIs/Experimental/Raw Sockets" execution_type="auto" id="TCPSocket_onerror_with_error" priority="P1" purpose="Check if set up the onerror event successful for TCPSocket using the type error" status="approved" type="compliance">
+          <description>
+            <test_script_entry>/opt/webapi-rawsockets-w3c-tests/rawsockets/TCPSocket_event_error.html</test_script_entry>
+          </description>
+          <specs>
+            <spec>
+              <spec_assertion category="W3C API Specifications" element_name="onerror" element_type="event" interface="TCPSocket" section="System-level APIs" specification="Raw Sockets" />
+              <spec_url>http://www.w3.org/2012/sysapps/raw-sockets/#interface-tcpsocket</spec_url>
+              <spec_statement/>
+            </spec>
+          </specs>
+        </testcase>
+        <testcase component="W3C_HTML5 APIs/Experimental/Raw Sockets" execution_type="auto" id="TCPSocket_onopen_with_open" priority="P1" purpose="Check if set up the onopen event successful for TCPSocket using the type open" status="approved" type="compliance">
+          <description>
+            <test_script_entry>/opt/webapi-rawsockets-w3c-tests/rawsockets/TCPSocket_event_open.html</test_script_entry>
+          </description>
+          <specs>
+            <spec>
+              <spec_assertion category="W3C API Specifications" element_name="onopen" element_type="event" interface="TCPSocket" section="System-level APIs" specification="Raw Sockets" />
+              <spec_url>http://www.w3.org/2012/sysapps/raw-sockets/#interface-tcpsocket</spec_url>
+              <spec_statement/>
+            </spec>
+          </specs>
+        </testcase>
+        <testcase component="W3C_HTML5 APIs/Experimental/Raw Sockets" execution_type="auto" id="TCPSocket_onclose_event" priority="P1" purpose="Check if onclose event can be fired when the connection to the server has been closed" status="approved" type="compliance">
+          <description>
+            <test_script_entry>/opt/webapi-rawsockets-w3c-tests/rawsockets/TCPSocket_event_onclose.html</test_script_entry>
+          </description>
+          <specs>
+            <spec>
+              <spec_assertion category="W3C API Specifications" element_name="onclose" element_type="event" interface="TCPSocket" section="System-level APIs" specification="Raw Sockets" />
+              <spec_url>http://www.w3.org/2012/sysapps/raw-sockets/#interface-tcpsocket</spec_url>
+              <spec_statement/>
+            </spec>
+          </specs>
+        </testcase>
+      </set>
+      <set name="TCPSocket3" type="js">
+        <testcase component="W3C_HTML5 APIs/Experimental/Raw Sockets" execution_type="auto" id="TCPSocket_localPort_absent" priority="P1" purpose="Check if bind the socket to an ephemeral local port decided by the system and set the localPort attribute to this port when localPort is absent" status="approved" type="compliance">
+          <description>
+            <test_script_entry>/opt/webapi-rawsockets-w3c-tests/rawsockets/TCPSocket_localPort_absent.html</test_script_entry>
+          </description>
+          <specs>
+            <spec>
+              <spec_assertion category="W3C API Specifications" element_name="localPort" element_type="attribute" interface="TCPSocket" section="System-level APIs" specification="Raw Sockets" />
+              <spec_url>http://www.w3.org/2012/sysapps/raw-sockets/#interface-tcpsocket</spec_url>
+              <spec_statement/>
+            </spec>
+          </specs>
+        </testcase>
+        <testcase component="W3C_HTML5 APIs/Experimental/Raw Sockets" execution_type="auto" id="TCPSocket_localAddress_absent" priority="P1" purpose="Check if use the routing table to determine the local interface(s) that can be used to connect to the selected remoteAddress when localAddress is absent" status="approved" type="compliance">
+          <description>
+            <test_script_entry>/opt/webapi-rawsockets-w3c-tests/rawsockets/TCPSocket_localAddress_absent.html</test_script_entry>
+          </description>
+          <specs>
+            <spec>
+              <spec_assertion category="W3C API Specifications" element_name="localAddress" element_type="attribute" interface="TCPSocket" section="System-level APIs" specification="Raw Sockets" />
+              <spec_url>http://www.w3.org/2012/sysapps/raw-sockets/#interface-tcpsocket</spec_url>
+              <spec_statement/>
+            </spec>
+          </specs>
+        </testcase>
+      </set>
+      <set name="TCPSocket4" type="js">
+        <testcase component="W3C_HTML5 APIs/Experimental/Raw Sockets" execution_type="auto" id="TCPSocket_onerror_event" priority="P1" purpose="Check if onerror event can be fired when there is an error" status="approved" type="compliance">
+          <description>
+            <test_script_entry>/opt/webapi-rawsockets-w3c-tests/rawsockets/TCPSocket_event_onerror.html</test_script_entry>
+          </description>
+          <specs>
+            <spec>
+              <spec_assertion category="W3C API Specifications" element_name="onerror" element_type="event" interface="TCPSocket" section="System-level APIs" specification="Raw Sockets" />
+              <spec_url>http://www.w3.org/2012/sysapps/raw-sockets/#interface-tcpsocket</spec_url>
+              <spec_statement/>
+            </spec>
+          </specs>
+        </testcase>
+        <testcase component="W3C_HTML5 APIs/Experimental/Raw Sockets" execution_type="auto" id="TCPSocket_onopen_event" priority="P1" purpose="Check if onopen event when the socket is open and the connection to the server has been established" status="approved" type="compliance">
+          <description>
+            <test_script_entry>/opt/webapi-rawsockets-w3c-tests/rawsockets/TCPSocket_event_onopen.html</test_script_entry>
+          </description>
+          <specs>
+            <spec>
+              <spec_assertion category="W3C API Specifications" element_name="onopen" element_type="event" interface="TCPSocket" section="System-level APIs" specification="Raw Sockets" />
+              <spec_url>http://www.w3.org/2012/sysapps/raw-sockets/#interface-tcpsocket</spec_url>
+              <spec_statement/>
+            </spec>
+          </specs>
+        </testcase>
+        <testcase component="W3C_HTML5 APIs/Experimental/Raw Sockets" execution_type="auto" id="TCPSocket_readyState_opening" priority="P1" purpose="Check if the value of TCPSocket.readyState is opening when the socket is in opening state" status="approved" type="compliance">
+          <description>
+            <test_script_entry>/opt/webapi-rawsockets-w3c-tests/rawsockets/TCPSocket_readystate_opening.html</test_script_entry>
+          </description>
+          <specs>
+            <spec>
+              <spec_assertion category="W3C API Specifications" element_name="readyState" element_type="attribute" interface="TCPSocket" section="System-level APIs" specification="Raw Sockets" />
+              <spec_url>http://www.w3.org/2012/sysapps/raw-sockets/#interface-tcpsocket</spec_url>
+              <spec_statement/>
+            </spec>
+          </specs>
+        </testcase>
+        <testcase component="W3C_HTML5 APIs/Experimental/Raw Sockets" execution_type="auto" id="TCPSocket_readyState_open" priority="P1" purpose="Check if the value of TCPSocket.readyState is open when the socket is in open state" status="approved" type="compliance">
+          <description>
+            <test_script_entry>/opt/webapi-rawsockets-w3c-tests/rawsockets/TCPSocket_readystate_open.html</test_script_entry>
+          </description>
+          <specs>
+            <spec>
+              <spec_assertion category="W3C API Specifications" element_name="readyState" element_type="attribute" interface="TCPSocket" section="System-level APIs" specification="Raw Sockets" />
+              <spec_url>http://www.w3.org/2012/sysapps/raw-sockets/#interface-tcpsocket</spec_url>
+              <spec_statement/>
+            </spec>
+          </specs>
+        </testcase>
+      </set>
+      <set name="TCPSocket5" type="js">
+        <testcase component="W3C_HTML5 APIs/Experimental/Raw Sockets" execution_type="auto" id="TCPSocket_readyState_closing" priority="P1" purpose="Check if the value of readyState is closing when the socket is in closing state" status="approved" type="compliance">
+          <description>
+            <test_script_entry>/opt/webapi-rawsockets-w3c-tests/rawsockets/TCPSocket_readystate_closing.html</test_script_entry>
+          </description>
+          <specs>
+            <spec>
+              <spec_assertion category="W3C API Specifications" element_name="readyState" element_type="attribute" interface="TCPSocket" section="System-level APIs" specification="Raw Sockets" />
+              <spec_url>http://www.w3.org/2012/sysapps/raw-sockets/#interface-tcpsocket</spec_url>
+              <spec_statement/>
+            </spec>
+          </specs>
+        </testcase>
+        <testcase component="W3C_HTML5 APIs/Experimental/Raw Sockets" execution_type="auto" id="TCPSocket_readyState_halfclosed" priority="P1" purpose="Check if the value of readyState is halfclosed when the socket is in halfclosed state" status="approved" type="compliance">
+          <description>
+            <test_script_entry>/opt/webapi-rawsockets-w3c-tests/rawsockets/TCPSocket_readystate_halfclosed.html</test_script_entry>
+          </description>
+          <specs>
+            <spec>
+              <spec_assertion category="W3C API Specifications" element_name="readyState" element_type="attribute" interface="TCPSocket" section="System-level APIs" specification="Raw Sockets" />
+              <spec_url>http://www.w3.org/2012/sysapps/raw-sockets/#interface-tcpsocket</spec_url>
+              <spec_statement/>
+            </spec>
+          </specs>
+        </testcase>
+        <testcase component="W3C_HTML5 APIs/Experimental/Raw Sockets" execution_type="auto" id="TCPSocket_readyState_closed" priority="P1" purpose="Check if the value of TCPSocket.readyState is closed when the socket is in closed state" status="approved" type="compliance">
+          <description>
+            <test_script_entry>/opt/webapi-rawsockets-w3c-tests/rawsockets/TCPSocket_readystate_closed.html</test_script_entry>
+          </description>
+          <specs>
+            <spec>
+              <spec_assertion category="W3C API Specifications" element_name="readyState" element_type="attribute" interface="TCPSocket" section="System-level APIs" specification="Raw Sockets" />
+              <spec_url>http://www.w3.org/2012/sysapps/raw-sockets/#interface-tcpsocket</spec_url>
+              <spec_statement/>
+            </spec>
+          </specs>
+        </testcase>
+        <testcase component="W3C_HTML5 APIs/Experimental/Raw Sockets" execution_type="auto" id="TCPSocket_suspend_method" priority="P1" purpose="Check if pause reading incoming TCP data and invocations of the ondata handler until resume is called." status="approved" type="compliance">
+          <description>
+            <test_script_entry>/opt/webapi-rawsockets-w3c-tests/rawsockets/TCPSocket_method_suspend.html</test_script_entry>
+          </description>
+          <specs>
+            <spec>
+              <spec_assertion category="W3C API Specifications" element_name="suspend" element_type="method" interface="TCPSocket" section="System-level APIs" specification="Raw Sockets" />
+              <spec_url>http://www.w3.org/2012/sysapps/raw-sockets/#interface-tcpsocket</spec_url>
+              <spec_statement/>
+            </spec>
+          </specs>
+        </testcase>
+        <testcase component="W3C_HTML5 APIs/Experimental/Raw Sockets" execution_type="auto" id="TCPSocket_close_method" priority="P1" purpose="Check if the value of readyState is closed after calling close method" status="approved" type="compliance">
+          <description>
+            <test_script_entry>/opt/webapi-rawsockets-w3c-tests/rawsockets/TCPSocket_method_close.html</test_script_entry>
+          </description>
+          <specs>
+            <spec>
+              <spec_assertion category="W3C API Specifications" element_name="close" element_type="method" interface="TCPSocket" section="System-level APIs" specification="Raw Sockets" />
+              <spec_url>http://www.w3.org/2012/sysapps/raw-sockets/#interface-tcpsocket</spec_url>
+              <spec_statement/>
+            </spec>
+          </specs>
+        </testcase>
+        <testcase component="W3C_HTML5 APIs/Experimental/Raw Sockets" execution_type="auto" id="TCPSocket_halfclose_method" priority="P1" purpose="Check if can not send data but can receive data after calling halfclose method" status="approved" type="compliance">
+          <description>
+            <test_script_entry>/opt/webapi-rawsockets-w3c-tests/rawsockets/TCPSocket_method_halfclose.html</test_script_entry>
+          </description>
+          <specs>
+            <spec>
+              <spec_assertion category="W3C API Specifications" element_name="halfclose" element_type="method" interface="TCPSocket" section="System-level APIs" specification="Raw Sockets" />
+              <spec_url>http://www.w3.org/2012/sysapps/raw-sockets/#interface-tcpsocket</spec_url>
+              <spec_statement/>
+            </spec>
+          </specs>
+        </testcase>
+        <testcase component="W3C_HTML5 APIs/Experimental/Raw Sockets" execution_type="auto" id="TCPSocket_resume_method" priority="P1" purpose="Check if resume reading incoming TCP data and invoking ondata as usual after calling resume method" status="approved" type="compliance">
+          <description>
+            <test_script_entry>/opt/webapi-rawsockets-w3c-tests/rawsockets/TCPSocket_method_resume.html</test_script_entry>
+          </description>
+          <specs>
+            <spec>
+              <spec_assertion category="W3C API Specifications" element_name="resume" element_type="method" interface="TCPSocket" section="System-level APIs" specification="Raw Sockets" />
+              <spec_url>http://www.w3.org/2012/sysapps/raw-sockets/#interface-tcpsocket</spec_url>
+              <spec_statement/>
+            </spec>
+          </specs>
+        </testcase>
+      </set>
+      <set name="TCPSocket6" type="js">
+        <testcase component="W3C_HTML5 APIs/Experimental/Raw Sockets" execution_type="auto" id="TCPSocket_send_DOMString" priority="P1" purpose="Check if can send DOMString using send method" status="approved" type="compliance">
+          <description>
+            <test_script_entry>/opt/webapi-rawsockets-w3c-tests/rawsockets/TCPSocket_method_send_DOMString.html</test_script_entry>
+          </description>
+          <specs>
+            <spec>
+              <spec_assertion category="W3C API Specifications" element_name="send" element_type="method" interface="TCPSocket" section="System-level APIs" specification="Raw Sockets" />
+              <spec_url>http://www.w3.org/2012/sysapps/raw-sockets/#interface-tcpsocket</spec_url>
+              <spec_statement/>
+            </spec>
+          </specs>
+        </testcase>
+        <testcase component="W3C_HTML5 APIs/Experimental/Raw Sockets" execution_type="auto" id="TCPSocket_send_Blob" priority="P1" purpose="Check if can send Blob object using send method" status="approved" type="compliance">
+          <description>
+            <test_script_entry>/opt/webapi-rawsockets-w3c-tests/rawsockets/TCPSocket_method_send_Blob.html</test_script_entry>
+          </description>
+          <specs>
+            <spec>
+              <spec_assertion category="W3C API Specifications" element_name="send" element_type="method" interface="TCPSocket" section="System-level APIs" specification="Raw Sockets" />
+              <spec_url>http://www.w3.org/2012/sysapps/raw-sockets/#interface-tcpsocket</spec_url>
+              <spec_statement/>
+            </spec>
+          </specs>
+        </testcase>
+        <testcase component="W3C_HTML5 APIs/Experimental/Raw Sockets" execution_type="auto" id="TCPSocket_send_ArrayBufferView" priority="P1" purpose="Check if can send ArrayBufferView using send method" status="approved" type="compliance">
+          <description>
+            <test_script_entry>/opt/webapi-rawsockets-w3c-tests/rawsockets/TCPSocket_method_send_ArrayBufferView.html</test_script_entry>
+          </description>
+          <specs>
+            <spec>
+              <spec_assertion category="W3C API Specifications" element_name="send" element_type="method" interface="TCPSocket" section="System-level APIs" specification="Raw Sockets" />
+              <spec_url>http://www.w3.org/2012/sysapps/raw-sockets/#interface-tcpsocket</spec_url>
+              <spec_statement/>
+            </spec>
+          </specs>
+        </testcase>
+        <testcase component="W3C_HTML5 APIs/Experimental/Raw Sockets" execution_type="auto" id="TCPSocket_send_ArrayBuffer" priority="P1" purpose="Check if can send ArrayBuffer using send method" status="approved" type="compliance">
+          <description>
+            <test_script_entry>/opt/webapi-rawsockets-w3c-tests/rawsockets/TCPSocket_method_send_ArrayBuffer.html</test_script_entry>
+          </description>
+          <specs>
+            <spec>
+              <spec_assertion category="W3C API Specifications" element_name="send" element_type="method" interface="TCPSocket" section="System-level APIs" specification="Raw Sockets" />
+              <spec_url>http://www.w3.org/2012/sysapps/raw-sockets/#interface-tcpsocket</spec_url>
+              <spec_statement/>
+            </spec>
+          </specs>
+        </testcase>
+      </set>
+      <set name="TCPSocket7" type="js">
+        <testcase component="W3C_HTML5 APIs/Experimental/Raw Sockets" execution_type="auto" id="TCPSocket_bufferedAmount_zero" priority="P1" purpose="Check if the value of TCPSocket.bufferedAmount is zero without sending anything when connectted" status="approved" type="compliance">
+          <description>
+            <test_script_entry>/opt/webapi-rawsockets-w3c-tests/rawsockets/TCPSocket_bufferedAmount_zero.html</test_script_entry>
+          </description>
+          <specs>
+            <spec>
+              <spec_assertion category="W3C API Specifications" element_name="bufferedAmount" element_type="attribute" interface="TCPSocket" section="System-level APIs" specification="Raw Sockets" />
+              <spec_url>http://www.w3.org/2012/sysapps/raw-sockets/#interface-tcpsocket</spec_url>
+              <spec_statement/>
+            </spec>
+          </specs>
+        </testcase>
+        <testcase component="W3C_HTML5 APIs/Experimental/Raw Sockets" execution_type="auto" id="TCPSocket_bufferedAmount_Blob" priority="P1" purpose="Check if the value of TCPSocket.bufferedAmount is the number of bytes which have previously been buffered by calls to the send methods of this socket with Blob" status="approved" type="compliance">
+          <description>
+            <test_script_entry>/opt/webapi-rawsockets-w3c-tests/rawsockets/TCPSocket_bufferedAmount_Blob.html</test_script_entry>
+          </description>
+          <specs>
+            <spec>
+              <spec_assertion category="W3C API Specifications" element_name="bufferedAmount" element_type="attribute" interface="TCPSocket" section="System-level APIs" specification="Raw Sockets" />
+              <spec_url>http://www.w3.org/2012/sysapps/raw-sockets/#interface-tcpsocket</spec_url>
+              <spec_statement/>
+            </spec>
+          </specs>
+        </testcase>
+        <testcase component="W3C_HTML5 APIs/Experimental/Raw Sockets" execution_type="auto" id="TCPSocket_bufferedAmount_ArrayBufferView" priority="P1" purpose="Check if the value of TCPSocket.bufferedAmount is the number of bytes which have previously been buffered by calls to the send methods of this socket with ArrayBufferView" status="approved" type="compliance">
+          <description>
+            <test_script_entry>/opt/webapi-rawsockets-w3c-tests/rawsockets/TCPSocket_bufferedAmount_ArrayBufferView.html</test_script_entry>
+          </description>
+          <specs>
+            <spec>
+              <spec_assertion category="W3C API Specifications" element_name="bufferedAmount" element_type="attribute" interface="TCPSocket" section="System-level APIs" specification="Raw Sockets" />
+              <spec_url>http://www.w3.org/2012/sysapps/raw-sockets/#interface-tcpsocket</spec_url>
+              <spec_statement/>
+            </spec>
+          </specs>
+        </testcase>
+        <testcase component="W3C_HTML5 APIs/Experimental/Raw Sockets" execution_type="auto" id="TCPSocket_bufferedAmount_ArrayBuffer" priority="P1" purpose="Check if the value of TCPSocket.bufferedAmount is the number of bytes which have previously been buffered by calls to the send methods of this socket with ArrayBuffer" status="approved" type="compliance">
+          <description>
+            <test_script_entry>/opt/webapi-rawsockets-w3c-tests/rawsockets/TCPSocket_bufferedAmount_ArrayBuffer.html</test_script_entry>
+          </description>
+          <specs>
+            <spec>
+              <spec_assertion category="W3C API Specifications" element_name="bufferedAmount" element_type="attribute" interface="TCPSocket" section="System-level APIs" specification="Raw Sockets" />
+              <spec_url>http://www.w3.org/2012/sysapps/raw-sockets/#interface-tcpsocket</spec_url>
+              <spec_statement/>
+            </spec>
+          </specs>
+        </testcase>
+      </set>
+      <set name="TCPServerSocket" type="js">
+        <testcase component="W3C_HTML5 APIs/Experimental/Raw Sockets" execution_type="auto" id="TCPServerSocket_attribute" priority="P1" purpose="Test TCPServerSocket attribute" status="approved" type="compliance" subcase="4">
+          <description>
+            <test_script_entry>/opt/webapi-rawsockets-w3c-tests/rawsockets/TCPServerSocket_attribute.html</test_script_entry>
+          </description>
+          <specs>
+            <spec>
+              <spec_assertion category="W3C API Specifications" element_name="addressReuse" element_type="attribute" interface="TCPServerSocket" section="System-level APIs" specification="Raw Sockets" />
+              <spec_url>http://www.w3.org/2012/sysapps/raw-sockets/#interface-tcpserversocket</spec_url>
+              <spec_statement/>
+            </spec>
+          </specs>
+        </testcase>
+        <testcase component="W3C_HTML5 APIs/Experimental/Raw Sockets" execution_type="auto" id="TCPServerSocket_onconnect_with_connect" priority="P1" purpose="Check if set up the onconnect event successful for TCPServerSocket using the type connect" status="approved" type="compliance">
+          <description>
+            <test_script_entry>/opt/webapi-rawsockets-w3c-tests/rawsockets/TCPServerSocket_event_connect.html</test_script_entry>
+          </description>
+          <specs>
+            <spec>
+              <spec_assertion category="W3C API Specifications" element_name="onconnect" element_type="event" interface="TCPServerSocket" section="System-level APIs" specification="Raw Sockets" />
+              <spec_url>http://www.w3.org/2012/sysapps/raw-sockets/#interface-tcpserversocket</spec_url>
+              <spec_statement/>
+            </spec>
+          </specs>
+        </testcase>
+        <testcase component="W3C_HTML5 APIs/Experimental/Raw Sockets" execution_type="auto" id="TCPServerSocket_onopen_with_open" priority="P1" purpose="Check if set up the onopen event successful for TCPServerSocket using the type open" status="approved" type="compliance">
+          <description>
+            <test_script_entry>/opt/webapi-rawsockets-w3c-tests/rawsockets/TCPServerSocket_event_open.html</test_script_entry>
+          </description>
+          <specs>
+            <spec>
+              <spec_assertion category="W3C API Specifications" element_name="onopen" element_type="event" interface="TCPServerSocket" section="System-level APIs" specification="Raw Sockets" />
+              <spec_url>http://www.w3.org/2012/sysapps/raw-sockets/#interface-tcpserversocket</spec_url>
+              <spec_statement/>
+            </spec>
+          </specs>
+        </testcase>
+        <testcase component="W3C_HTML5 APIs/Experimental/Raw Sockets" execution_type="auto" id="TCPServerSocket_onconnect_event" priority="P1" purpose="Check if onconnect event can be fired when an incoming connection attempt on the specified port and address has been accepted" status="approved" type="compliance">
+          <description>
+            <test_script_entry>/opt/webapi-rawsockets-w3c-tests/rawsockets/TCPServerSocket_event_onconnect.html</test_script_entry>
+          </description>
+          <specs>
+            <spec>
+              <spec_assertion category="W3C API Specifications" element_name="onconnect" element_type="event" interface="TCPServerSocket" section="System-level APIs" specification="Raw Sockets" />
+              <spec_url>http://www.w3.org/2012/sysapps/raw-sockets/#interface-tcpserversocket</spec_url>
+              <spec_statement/>
+            </spec>
+          </specs>
+        </testcase>
+        <testcase component="W3C_HTML5 APIs/Experimental/Raw Sockets" execution_type="auto" id="TCPServerSocket_onopen_event" priority="P1" purpose="Check if onopen event can be fired when the socket is open and ready to receive connection attempts from clients" status="approved" type="compliance">
+          <description>
+            <test_script_entry>/opt/webapi-rawsockets-w3c-tests/rawsockets/TCPServerSocket_event_onopen.html</test_script_entry>
+          </description>
+          <specs>
+            <spec>
+              <spec_assertion category="W3C API Specifications" element_name="onopen" element_type="event" interface="TCPServerSocket" section="System-level APIs" specification="Raw Sockets" />
+              <spec_url>http://www.w3.org/2012/sysapps/raw-sockets/#interface-tcpserversocket</spec_url>
+              <spec_statement/>
+            </spec>
+          </specs>
+        </testcase>
+        <testcase component="W3C_HTML5 APIs/Experimental/Raw Sockets" execution_type="auto" id="TCPServerSocket_readyState_open" priority="P1" purpose="Check if the value of TCPServerSocket.readyState is open when the socket is in open state" status="approved" type="compliance">
+          <description>
+            <test_script_entry>/opt/webapi-rawsockets-w3c-tests/rawsockets/TCPServerSocket_readystate_open.html</test_script_entry>
+          </description>
+          <specs>
+            <spec>
+              <spec_assertion category="W3C API Specifications" element_name="readyState" element_type="attribute" interface="TCPServerSocket" section="System-level APIs" specification="Raw Sockets" />
+              <spec_url>http://www.w3.org/2012/sysapps/raw-sockets/#interface-tcpserversocket</spec_url>
+              <spec_statement/>
+            </spec>
+          </specs>
+        </testcase>
+        <testcase component="W3C_HTML5 APIs/Experimental/Raw Sockets" execution_type="auto" id="TCPServerSocket_readyState_opening" priority="P1" purpose="Check if the value of TCPServerSocket.readyState is opening when the socket is in opening state" status="approved" type="compliance">
+          <description>
+            <test_script_entry>/opt/webapi-rawsockets-w3c-tests/rawsockets/TCPServerSocket_readystate_opening.html</test_script_entry>
+          </description>
+          <specs>
+            <spec>
+              <spec_assertion category="W3C API Specifications" element_name="readyState" element_type="attribute" interface="TCPServerSocket" section="System-level APIs" specification="Raw Sockets" />
+              <spec_url>http://www.w3.org/2012/sysapps/raw-sockets/#interface-tcpserversocket</spec_url>
+              <spec_statement/>
+            </spec>
+          </specs>
+        </testcase>
+        <testcase component="W3C_HTML5 APIs/Experimental/Raw Sockets" execution_type="auto" id="TCPServerSocket_readyState_closed" priority="P1" purpose="Check if the value of TCPServerSocket.readyState is closed when the socket is in closed state" status="approved" type="compliance">
+          <description>
+            <test_script_entry>/opt/webapi-rawsockets-w3c-tests/rawsockets/TCPServerSocket_readystate_closed.html</test_script_entry>
+          </description>
+          <specs>
+            <spec>
+              <spec_assertion category="W3C API Specifications" element_name="readyState" element_type="attribute" interface="TCPServerSocket" section="System-level APIs" specification="Raw Sockets" />
+              <spec_url>http://www.w3.org/2012/sysapps/raw-sockets/#interface-tcpserversocket</spec_url>
+              <spec_statement/>
+            </spec>
+          </specs>
+        </testcase>
+        <testcase component="W3C_HTML5 APIs/Experimental/Raw Sockets" execution_type="auto" id="TCPServerSocket_close_method" priority="P1" purpose="Check if close the TCP server socket after calling close method" status="approved" type="compliance">
+          <description>
+            <test_script_entry>/opt/webapi-rawsockets-w3c-tests/rawsockets/TCPServerSocket_method_close.html</test_script_entry>
+          </description>
+          <specs>
+            <spec>
+              <spec_assertion category="W3C API Specifications" element_name="close" element_type="method" interface="TCPServerSocket" section="System-level APIs" specification="Raw Sockets" />
+              <spec_url>http://www.w3.org/2012/sysapps/raw-sockets/#interface-tcpserversocket</spec_url>
+              <spec_statement/>
+            </spec>
+          </specs>
+        </testcase>
+        <testcase component="W3C_HTML5 APIs/Experimental/Raw Sockets" execution_type="auto" id="TCPServerSocket_suspend_method" priority="P1" purpose="Check if pause listening for incoming connections and invocations after calling suspend method" status="approved" type="compliance">
+          <description>
+            <test_script_entry>/opt/webapi-rawsockets-w3c-tests/rawsockets/TCPServerSocket_method_suspend.html</test_script_entry>
+          </description>
+          <specs>
+            <spec>
+              <spec_assertion category="W3C API Specifications" element_name="pause" element_type="method" interface="TCPServerSocket" section="System-level APIs" specification="Raw Sockets" />
+              <spec_url>http://www.w3.org/2012/sysapps/raw-sockets/#interface-tcpserversocket</spec_url>
+              <spec_statement/>
+            </spec>
+          </specs>
+        </testcase>
+        <testcase component="W3C_HTML5 APIs/Experimental/Raw Sockets" execution_type="auto" id="TCPServerSocket_resume_method" priority="P1" purpose="Check if resume listening for incoming connections and invocations after calling resume method" status="approved" type="compliance">
+          <description>
+            <test_script_entry>/opt/webapi-rawsockets-w3c-tests/rawsockets/TCPServerSocket_method_resume.html</test_script_entry>
+          </description>
+          <specs>
+            <spec>
+              <spec_assertion category="W3C API Specifications" element_name="resume" element_type="method" interface="TCPServerSocket" section="System-level APIs" specification="Raw Sockets" />
+              <spec_url>http://www.w3.org/2012/sysapps/raw-sockets/#interface-tcpserversocket</spec_url>
+              <spec_statement/>
+            </spec>
+          </specs>
+        </testcase>
+      </set>
+    </suite>
+  </test_definition>
