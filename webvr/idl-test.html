@@ -244,9 +244,10 @@ interface VRStageParameters {
 
 partial interface Navigator {
   Promise<sequence<VRDisplay>> getVRDisplays();
+  Promise <void>getVRDisplays();
   readonly attribute sequence<VRDisplay> activeVRDisplays;
 };
-
+<!--
 partial interface Window {
   attribute EventHandler onvrdisplayconnected;
   attribute EventHandler onvrdisplaydisconnected;
@@ -255,7 +256,7 @@ partial interface Window {
 
 partial interface Gamepad {
   [Constant] readonly attribute unsigned long displayId;
-};</pre>
+};--></pre>
 
   <div id="log"></div>
 
@@ -267,7 +268,10 @@ partial interface Gamepad {
   idl_array.add_idls(document.getElementById("audio-buffer-idl").textContent);
 
   // For these tests the value of the arguments is unimportant.
-  audio_buffer = navigator.getVRDisplays();
+  var audio_buffer;
+  navigator.getVRDisplays().then(function (displays){
+    audio_buffer = displays[0]
+  });
 
   idl_array.add_objects({VRDisplay: ["audio_buffer"]});
   idl_array.test();
